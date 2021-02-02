@@ -37,7 +37,7 @@ run_docker_prod:
 	$(info ******** Starting Production ********)
 	@ docker run -it --rm -p 8080:80 react-playground:prod
 
-BRANCH := $(shell git branch --show-current)
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 
 update_local:
 ifeq ($(BRANCH),master)
